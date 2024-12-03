@@ -1,0 +1,10 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px; /* Optional: set a base font size */
+    line-height: 1.5; /* Optional: adjust line spacing */
+  }
+  
+  h1, h2, h3, p {
+    font-family: 'Roboto', sans-serif;
+  }
+  
