@@ -1,15 +1,11 @@
 import { useState, useEffect } from 'react';
 import AnnuityOfFutureValue from './AnnuityOfFutureValue';
 import FutureValueOfAnnuity from './FutureValueOfAnnuity';
+import Header from './Header'
 
 export default function Form() {
-    const [name, setName] = useState('');
-    const [futureValue, setFutureValue] = useState('');
-    const [interestRate, setInterestRate] = useState('');
-    const [time, setTime] = useState('');
-    const [greet, setGreet] = useState('');
-    const [annuity, setAnnuity] = useState(null);
-    const [calculationType, setCalculationType] = useState('Annuity of Future Value');
+    const [greet, setGreet] = useState('Hello, human.');
+    const [calculationType, setCalculationType] = useState(null);
 
     // Function to fetch the greet message
     const simpleInterest = async () => {
@@ -37,16 +33,23 @@ export default function Form() {
     }, []);
 
     return (
-        <div style={{ padding: '10px', textAlign: 'center' }}>
-            <h2>{greet} Let's calculate your Financial Goal.</h2>
-            <br />
-            <label htmlFor="mySelect">Choose an option: </label>
-            <select id="mySelect" value={calculationType} onChange={(e) => setCalculationType(e.target.value)}>
-                <option value="Annuity of Future Value">Annuity of Future Value</option>
-                <option value="Future Value of Annuity">Future Value of Annuity</option>
-            </select>
-            <br /> <br />
-            {calculationType === 'Annuity of Future Value' ? <AnnuityOfFutureValue /> : <FutureValueOfAnnuity />}
-        </div>
+        <>
+            <Header />
+            <div style={{ padding: '10px', textAlign: 'center' }}>
+                <p style={{fontSize: "1.5rem"}}>{greet} Let's calculate your Financial Goal 💰📝📈</p>
+                <br />
+                <label htmlFor="mySelect">Choose an option: </label>
+                <select id="mySelect" value={calculationType} onChange={(e) => setCalculationType(e.target.value)}>
+                    <option value="" default>Select an option</option>
+                    <option value="Annuity of Future Value">Annuity of Future Value</option>
+                    <option value="Future Value of Annuity">Future Value of Annuity</option>
+                </select>
+                <br />
+                <br />
+                <br /> <br />
+                {calculationType && (calculationType === 'Annuity of Future Value' ? <AnnuityOfFutureValue /> : <FutureValueOfAnnuity />)}
+                <br /> <br />
+            </div>
+        </>
     );
 }

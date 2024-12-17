@@ -25,7 +25,7 @@ export default function Block({value}) {
           }),
         })}
       >
-        ${value} per year
+        ${value}
       </Box>
     </div>
   );

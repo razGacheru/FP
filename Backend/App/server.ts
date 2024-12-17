@@ -13,18 +13,18 @@ const HOST: string = 'localhost'
 console.log(simpleInterest(100, 5, 1))
 
 app.get('/', (req: Request, res: Response) => {
-  res.json({'data': 'Hello!'})
+  res.json({'data': 'Hello, human.'})
 })
 
 app.get('/annuityOfFutureValue', (req: Request, res: Response) => {
-  const {futureValue, interestRate, time} = req.query
-  const annuity = annuityOfFutureValue(futureValue, interestRate, time)
+  const {futureValue, frequency, interestRate, time} = req.query
+  const annuity = annuityOfFutureValue(futureValue, frequency, interestRate, time)
   res.json({'annuity': annuity})
 })
 
 app.get('/futureValueOfAnnuity', (req: Request, res: Response) => {
-  const {contribution, interestRate, time} = req.query
-  const futureValue = futureValueOfAnnuity(contribution, interestRate, time)
+  const {contribution, frequency, interestRate, time} = req.query
+  const futureValue = futureValueOfAnnuity(contribution, frequency, interestRate, time)
   res.json({'futureValue': futureValue})
 })
 
