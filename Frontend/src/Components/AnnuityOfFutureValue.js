@@ -95,10 +95,6 @@ export default function AnnuityOfFutureValue() {
             <br />
             <div style={{display: 'flex', justifyContent: "space-between"}}>
                 <label for="frequencyField">Contribution Frequency</label>
-                {/* <select id="frequencyField" value={frequency} onChange={(e) => setFrequency(e.target.value)}>
-                    <option value={'weekly'}>weekly</option>
-                    <option value={'yearly'}>yearly</option>
-                </select> */}
                 <SelectVariants frequency={frequency} setFrequency={setFrequency}/>
             </div>
             <br />
@@ -119,7 +115,7 @@ export default function AnnuityOfFutureValue() {
                         <h3>{annuity != null ? <Block value={annuity} /> : 'Loading...'}</h3>
                         
                         <p style={{ fontStyle: 'italic', width: '60%', margin: 'auto' }}>
-                            Note: Make contribution at the start of each {frequency} to achieve goal at the end of {time} years. 
+                            Note: Make contribution at the start of each {frequency} to achieve goal at the start of {time} years after the first contribution. 
                         </p>
                     </>
             }

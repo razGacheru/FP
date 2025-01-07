@@ -19,8 +19,8 @@ export default function SelectVariants({frequency, setFrequency}) {
           onChange={handleChange}
           label="Age"
         >
-          <MenuItem value={'yearly'}>yearly</MenuItem>
-          <MenuItem value={'weekly'}>weekly</MenuItem>
+          <MenuItem value={'yearly'}>ANNUALLY</MenuItem>
+          <MenuItem value={'monthly'}>MONTHLY</MenuItem>
         </Select>
       </FormControl>
     </div>

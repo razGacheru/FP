@@ -19,21 +19,21 @@ const presentValueOfSingleCashFlow = (futureValue: number, interestRate: number,
 // How much will we have in 5 years if we invest $10 per year at 5% p.a.?
 const futureValueOfAnnuity = (principal: number, frequency: string, interestRate: number, time: number) => {
     let r: number = interestRate / 100
-    if (frequency == 'weekly') {
+    if (frequency == 'monthly') {
         [r, time] = frequencyConvert(r, time)
     }
     const futureValue: number = principal * ((((1 + r) ** time) - 1) / r)
-    return (futureValue + (futureValue * r)).toFixed(2)
+    return (futureValue).toFixed(2)
 }
 
 // How much to invest each year to have $55.26 in 5 years at 5% p.a.?
 const annuityOfFutureValue = (futureValue: number, frequency: string, interestRate: number, time: number) => {
     let r: number = interestRate / 100
-    if (frequency == 'weekly') {
+    if (frequency == 'monthly') {
         [r, time] = frequencyConvert(r, time)
     }
     const annuity: number = futureValue / ((((1 + r) ** time) - 1) / r)
-    return (annuity - (annuity * r)).toFixed(2)
+    return (annuity).toFixed(2)
 }
 
 export {simpleInterest, presentValueOfSingleCashFlow, futureValueOfAnnuity, annuityOfFutureValue}

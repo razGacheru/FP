@@ -36,7 +36,7 @@ export default function Form() {
         <>
             <Header />
             <div style={{ padding: '10px', textAlign: 'center' }}>
-                <p style={{fontSize: "1.5rem"}}>{greet} Let's calculate your Financial Goal 💰📝📈</p>
+                <p style={{fontSize: "1.5rem"}}>{greet} Let's calculate your Financial Goal 💰📈</p>
                 <br />
                 <label htmlFor="mySelect">Choose an option: </label>
                 <select id="mySelect" value={calculationType} onChange={(e) => setCalculationType(e.target.value)}>
